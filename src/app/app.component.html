@@ -17,4 +17,54 @@
     <h2><a target="_blank" href="http://angularjs.blogspot.com/">Angular blog</a></h2>
   </li>
 </ul>
+<ul>
+  <li *ngFor="let arr of myArr">{{arr}}</li>
+</ul>
+<div *ngIf="myArr; then tmpl1 else tmpl2"></div>
 
+  <ng-template #tmpl1>I'm here</ng-template>
+  <ng-template #tmpl2>I'm not here</ng-template>
+
+<div>
+  <img src="{{ angularLogo }}">
+  <img [src]="angularLogo">
+  <img bind-src="angularLogo">
+</div>
+
+<div>
+  <button [disabled]="buttonStatus">My Button</button>
+  <button (click)="myEvent($event)" (dblclick)="myDblClick()">My Button</button>
+</div>
+
+<div>
+  <h1 [class]="titleClass">
+    {{title}}
+  </h1>
+  <h1 [class.red-title]="titleClass">
+    {{title}}
+  </h1>
+  <h1 [style.color]="titleStyle">
+    {{title}}
+  </h1>
+  <h1 [style.color]="titleStyle ? 'green' : 'pink'">
+    {{title}}
+  </h1>
+  <h1 [ngClass]="titleClasses">
+    {{title}}
+  </h1>
+  <h1 [ngStyle]="titleStyles">
+    {{title}}
+  </h1>
+</div>
+
+<div>
+  <p>{{ someProperty }}</p>
+</div>
+
+<div>
+  <p [@myAwesomeAnimation]='state' (click)="animateMe()">I will animate</p>
+</div>
+
+<div>
+  <p [@myAwesomeAnimation2]='state' (click)="animateMe2()">I will animate</p>
+</div>
