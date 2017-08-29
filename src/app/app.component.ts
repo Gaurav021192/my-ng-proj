@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -36,8 +37,13 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
 export class AppComponent {
   title = 'app';
   myArr = ['him','hers','yours','theirs'];
+  price = 123456;
+  dateVal = new Date();
+  jsonVal = { moo: 'foo', goo: { too: 'new' }};
   angularLogo = 'http://lorempixel.com/400/200/sports/';
   buttonStatus = true;
+  promise: Promise<string>;
+  observable: Observable<number>;
   titleClass = 'red-title';
   titleStyle = 'blue';
   titleClasses = {
@@ -50,7 +56,8 @@ export class AppComponent {
   }
 
   constructor(private dataService:DataService) {
-
+      this.promise = this.getPromise();
+      this.observable = this.getObservable();
   }
 
   someProperty:string = '';
@@ -79,5 +86,18 @@ state: string = 'small';
 
   myDblClick() {
     alert('Test Me!!!!!');
+  }
+
+  getPromise() {
+     return new Promise((resolve, reject) => {
+       setTimeout(() => resolve("Promise complete!"), 3000);
+     });
+  }
+
+  getObservable() {
+    return Observable
+      .interval(1000)
+      .take(10)
+      .map((v) => v*v)
   }
 }
