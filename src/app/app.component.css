@@ -16,3 +16,27 @@ h1 {
         padding:20px;
         font-size:1.5em;
       }
+
+.ui-inputgroup .ui-inputgroup-addon {
+  border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    min-width: 1.5em;
+    padding: .25em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    background-color: #f0f0f0;
+    color: #222222;
+}
+
+.ui-inputtext {
+  padding-left: .5em;
+    margin: 0;
+    outline: medium none;
+    padding: 0.25em;
+    background: #ffffff;
+    color: #222222;
+    transition: .2s;
+}

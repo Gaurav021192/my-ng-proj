@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from './data.service';
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
 import { Observable } from 'rxjs/Rx';
+import { HeroComponent } from './hero/hero.component';
 
 @Component({
   selector: 'app-root',
@@ -53,6 +54,10 @@ export class AppComponent {
   titleStyles = {
     'color': 'red',
     'font-size' : '4em'
+  }
+  person = {
+    name : 'Gaurav Bisht',
+    place : 'Nainital'
   }
 
   constructor(private dataService:DataService) {

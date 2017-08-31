@@ -84,3 +84,29 @@
 <div>
   <p class="content" [@myAwesomeAnimation2]='state' (click)="animateMe2()">I will animate</p>
 </div>
+
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="text" pInputText placeholder="Username">
+        </div>
+    </div>
+  </div>
+
+  <div>
+    <app-hero></app-hero>
+  </div>
+
+  <div>
+    <input [(ngModel)]="person.name">
+    <input [(ngModel)]="person.place">
+    <p>{{person.name}}</p>
+    <p>{{person.place}}</p>
+  </div>
+
+  <ul>
+    <li><a [routerLink]="['app']">App</a></li>
+    <li><a [routerLink]="['hero']">Hero</a></li>
+  </ul>
+  <router-outlet></router-outlet>
