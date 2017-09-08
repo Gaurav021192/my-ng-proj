@@ -36,6 +36,7 @@ import { DataService } from '../data.service';
 })
 export class HeroComponent implements OnInit {
 
+  title = 'Hero';
   myArr = ['him','hers','yours','theirs'];
   price = 123456;
   dateVal = new Date();
