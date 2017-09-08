@@ -4,109 +4,11 @@
     Welcome to {{title}}!
   </h1>
   <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.com/">Angular blog</a></h2>
-  </li>
-</ul>
-<ul>
-  <li *ngFor="let arr of myArr">{{arr}}</li>
-</ul>
-<div *ngIf="myArr; then tmpl1 else tmpl2"></div>
-
-  <ng-template #tmpl1>I'm here</ng-template>
-  <ng-template #tmpl2>I'm not here</ng-template>
-
-<div>
-  <img src="{{ angularLogo }}">
-  <img [src]="angularLogo">
-  <img bind-src="angularLogo">
-</div>
-
-<div>
-  <button [disabled]="buttonStatus">My Button</button>
-  <button (click)="myEvent($event)" (dblclick)="myDblClick()">My Button</button>
-</div>
-
-<div>
-  <h1 [class]="titleClass">
-    {{title}}
-  </h1>
-  <h1 [class.red-title]="titleClass">
-    {{title}}
-  </h1>
-  <h1 [style.color]="titleStyle">
-    {{title}}
-  </h1>
-  <h1 [style.color]="titleStyle ? 'green' : 'pink'">
-    {{title}}
-  </h1>
-  <h1 [ngClass]="titleClasses">
-    {{title}}
-  </h1>
-  <h1 [ngStyle]="titleStyles">
-    {{title}}
-  </h1>
-</div>
-
-<div>
-  <p ngNonBindable>{{ price | currency:'GBP' }}</p>
-  <p>{{ price | currency : 'USD'}}</p>
-  <p> {{ price | currency:'INR':true }}</p>
-  <p>{{ dateVal | date: 'shortTime' }}</p>
-  <p>{{ dateVal | date: 'fullDate' }}</p>
-  <p>{{ dateVal | date: 'd/M/y' }}</p>
-  <p>{{ jsonVal }}</p>
-  <p>{{ jsonVal | json }}</p>
-  <p>{{ 0.123456 | percent }}</p>
-  <p>{{ 0.123456 | percent: '2.1-2' }}</p>
-  <p>{{ [1,2,3,4,5,6] | slice:1:3 }}</p>
-  <p>{{ promise | async }}</p>
-  <p>{{ observable | async }}</p>
-</div>
-
-<div>
-  <p class="content">{{ someProperty }}</p>
-</div>
-
-<div>
-  <p class="content" [@myAwesomeAnimation]='state' (click)="animateMe()">I will animate</p>
-</div>
-
-<div>
-  <p class="content" [@myAwesomeAnimation2]='state' (click)="animateMe2()">I will animate</p>
-</div>
-
-<div class="ui-g ui-fluid">
-    <div class="ui-g-12 ui-md-4">
-        <div class="ui-inputgroup">
-            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-            <input type="text" pInputText placeholder="Username">
-        </div>
-    </div>
-  </div>
-
   <div>
-    <app-hero></app-hero>
+    <a [routerLink]="['hero']">Hero</a>
+    <a [routerLink]="['home']">Home</a>
   </div>
-
-  <div>
-    <input [(ngModel)]="person.name">
-    <input [(ngModel)]="person.place">
-    <p>{{person.name}}</p>
-    <p>{{person.place}}</p>
-  </div>
-
-  <ul>
-    <li><a [routerLink]="['app']">App</a></li>
-    <li><a [routerLink]="['hero']">Hero</a></li>
-  </ul>
+</div>
+<div>
   <router-outlet></router-outlet>
+</div>

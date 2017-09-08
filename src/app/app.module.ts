@@ -4,26 +4,29 @@ import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { CalendarModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'app', pathMatch: 'full' },
-  { path: 'app', component: AppComponent },
-  { path: 'hero', component: HeroComponent }
+  { path: 'hero', component: HeroComponent },
+  { path: 'home', component: HomeComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroComponent
+    HeroComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    CalendarModule,
     RouterModule.forRoot(routes)
   ],
   providers: [DataService],
