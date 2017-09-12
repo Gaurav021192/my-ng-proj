@@ -11,6 +11,7 @@ export class CustomComponent implements OnInit {
   cities: SelectItem[];
 
     selectedCity: string;
+    name: string;
 
     constructor() {
         this.cities = [];
