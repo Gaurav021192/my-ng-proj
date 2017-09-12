@@ -1,0 +1,7 @@
+<section class="container-fluid">
+<p>
+  custom works!
+</p>
+<p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+<p>Selected City: {{selectedCity ? selectedCity.name : 'none'}}</p>
+</section>
