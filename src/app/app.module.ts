@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CalendarModule } from 'primeng/primeng';
 import { EditorModule } from 'primeng/primeng';
 import { DropdownModule } from 'primeng/primeng';
+import { ProgressBarModule } from 'primeng/primeng';
+import { GrowlModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HeroComponent } from './hero/hero.component';
@@ -36,6 +38,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     EditorModule,
     DropdownModule,
+    GrowlModule,
+    ProgressBarModule,
     CalendarModule,
     RouterModule.forRoot(routes)
   ],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SelectItem} from 'primeng/primeng';
+import {Message} from 'primeng/primeng';
 
 @Component({
   selector: 'app-custom',
@@ -11,6 +12,8 @@ export class CustomComponent implements OnInit {
   cities: SelectItem[];
 
     selectedCity: string;
+    msgs: Message[];
+    value: number = 0;
 
     constructor() {
         this.cities = [];
@@ -22,7 +25,15 @@ export class CustomComponent implements OnInit {
         this.cities.push({label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}});
     }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        let interval = setInterval(() => {
+            this.value = this.value + Math.floor(Math.random() * 10) + 1;
+            if(this.value >= 100) {
+                this.value = 100;
+                this.msgs = [{severity: 'info', summary: 'Success', detail: 'Process Completed'}];
+                clearInterval(interval);
+            }
+        }, 2000);
+    }
 
 }
