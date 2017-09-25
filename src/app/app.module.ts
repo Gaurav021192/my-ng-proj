@@ -4,6 +4,7 @@ import { DataService } from './data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import { CalendarModule } from 'primeng/primeng';
 import { EditorModule } from 'primeng/primeng';
 import { DropdownModule } from 'primeng/primeng';
@@ -15,12 +16,14 @@ import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home/home.component';
 import { EditorComponent } from './editor/editor.component';
 import { CustomComponent } from './custom/custom.component';
+import { DataJsonComponent } from './data-json/data-json.component';
 
 const routes: Routes = [
   { path: 'hero', component: HeroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'editor', component: EditorComponent},
-  { path: 'custom', component: CustomComponent}
+  { path: 'custom', component: CustomComponent},
+  { path: 'data', component: DataJsonComponent}
 ];
 
 @NgModule({
@@ -29,12 +32,14 @@ const routes: Routes = [
     HeroComponent,
     HomeComponent,
     EditorComponent,
-    CustomComponent
+    CustomComponent,
+    DataJsonComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     EditorModule,
     DropdownModule,
@@ -43,7 +48,7 @@ const routes: Routes = [
     CalendarModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DataService],
+  providers: [DataService, DataJsonComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

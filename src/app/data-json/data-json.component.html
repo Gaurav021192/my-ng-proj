@@ -1,0 +1,9 @@
+<p>
+  data-json works!
+</p>
+<div>
+	<hr>
+  <ng-container *ngFor="let contact of data.contacts | slice:0:10">
+    <h2>{{contact.name}}</h2>
+  </ng-container>
+</div>
