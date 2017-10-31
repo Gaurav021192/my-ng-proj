@@ -10,8 +10,10 @@ import 'rxjs/add/operator/map';
 export class DataJsonComponent implements OnInit {
 
   private apiURL = 'https://address-book-demo.herokuapp.com/api/contacts';
+  private jsonURL = './assets/json-data/pages.json';
   data: any = {};
   isCollapsed = false;
+  public groups: Object[];
   constructor(private http: Http) {
     console.log('Hello');
     this.getContacts();
@@ -19,6 +21,10 @@ export class DataJsonComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.http.get(this.jsonURL).map((response: Response) => response.json() as Object[])
+            .subscribe((data: Object[]) => {
+            this.groups = data;
+        });
   }
 
   getData() {
