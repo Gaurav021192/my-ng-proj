@@ -14,6 +14,7 @@ export class DataJsonComponent implements OnInit {
   data: any = {};
   isCollapsed = false;
   public groups: Object[];
+  public lessons:boolean;
   constructor(private http: Http) {
     console.log('Hello');
     this.getContacts();
